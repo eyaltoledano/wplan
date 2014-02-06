@@ -20,10 +20,10 @@
       <tbody>
         <% @tasks.each do |task| %>
           <tr>
-            <td><%= task.complete %></td>
-            <td><%= task.title %></td>
+            <td><%= task.is_complete? %></td>
+            <td><%= link_to task.title, task %></td>
             <td><%= task.deadline %></td>
-            <td><%= @topay %></td>
+            <td>$<%= @topay.to_i %></td>
             <td></td>
             <td></td>
             <td><%= link_to 'Show', task, { :class => "btn btn-default btn-xs" } %>
