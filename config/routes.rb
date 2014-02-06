@@ -1,9 +1,9 @@
 Wplan::Application.routes.draw do
   resources :tasks
 
-  root            'pages#index'
-  get "about" =>  'pages#about'
-
+  root                'pages#index'
+  get "about"     =>  'pages#about'
+  get "dashboard" =>  'pages#dashboard'
   
 
 

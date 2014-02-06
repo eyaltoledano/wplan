@@ -1,7 +1,7 @@
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <p><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</p>
 
       <ul>
       <% @task.errors.full_messages.each do |msg| %>
@@ -11,23 +11,56 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+<div class="form-horizontal">
+    <div class="form-group">
+      <%= f.label :title, class: "col-sm-2 control-label" %>
+      <div class="col-sm-9"> 
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, class: "col-sm-2 control-label" %>
+      <div class="col-sm-9">
+        <%= f.text_field :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :deadline, class: "col-sm-2 control-label" %>
+      <div class="col-sm-9">
+        <%= f.text_field :deadline, class: "form-control" %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label :cost, class: "col-sm-2 control-label" %>
+      <div class="col-sm-9">
+        <%= f.text_field :cost, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :paidtodate, "Paid to Date", class: "col-sm-2 control-label" %>
+      <div class="col-sm-9">
+        <%= f.text_field :paidtodate, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :notes, class: "col-sm-2 control-label" %>
+      <div class="col-sm-9">
+        <%= f.text_field :notes, class: "form-control" %>
+      </div>
+    </div>
+</div>
+
+  <div class="panel form-group col-sm-offset-3 col-sm-6">
+    <div class="panel checkbox">
+      <%= f.label :complete, "Is this task complete?" %>
+      <%= f.check_box :complete %>
+    </div>
+    <hr>
+    <%= f.submit "Save this task", class: "btn btn-success btn-lg btn-block"  %>
   </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.text_field :deadline %>
-  </div>
-  <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
-  </div>
-  <div class="field">
-    <%= f.label :paidtodate %><br>
-    <%= f.text_field :paidtodate %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

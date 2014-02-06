@@ -1,6 +1,14 @@
-<h1>Editing task</h1>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1 class="panel-title center">Editing <%= @task.title %> <strong>(#<%= @task.id %>)</strong></h1>
+	</div>
 
-<%= render 'form' %>
+	<div class="panel-body">
+		<%= render 'form' %>
+	</div>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+	<div class="panel-footer">
+		<%= link_to 'Show', @task, class: "btn btn-default btn-sm" %> |
+		<%= link_to 'Back', tasks_path, class: "btn btn-default btn-sm" %>
+	</div>
+</div>

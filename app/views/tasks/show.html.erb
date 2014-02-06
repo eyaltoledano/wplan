@@ -1,24 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title center"><%= @task.title %><strong> (#<%= @task.id %>)</strong></h1>
+  </div>
+  
+  <div class="panel-body">
+  	<div class="form-horizontal">
+		<div class="form-group">
+		  <label class="col-sm-2 control-label">Description:</label>
+		  <div class="col-sm-10">
+			  <%= @task.description %>
+		  </div>
+		</div>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @task.deadline %>
-</p>
+		<div class="form-group">
+		  <label class="col-sm-2 control-label">Deadline:</label>
+		  <div class="col-sm-10">
+			  <%= @task.deadline %>
+		  </div>
+		</div>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @task.cost %>
-</p>
+		<div class="form-group">
+		  <label class="col-sm-2 control-label">Cost:</label>
+		  <div class="col-sm-10">
+			  <%= @task.cost %>
+		  </div>
+		</div>
 
-<p>
-  <strong>Paidtodate:</strong>
-  <%= @task.paidtodate %>
-</p>
+		<div class="form-group">
+		  <label class="col-sm-2 control-label">Paid to Date:</label>
+		  <div class="col-sm-10">
+			  <%= @task.paidtodate %>
+		  </div>
+		</div>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+		<div class="form-group">
+		  <label class="col-sm-2 control-label">Left to pay:</label>
+		  <div class="col-sm-10">
+			  $<%= (@topay.to_i) %>
+		  </div>
+		</div>
+
+  	</div>
+  </div>  
+
+  <div class="panel-footer">
+	<%= link_to 'Edit', edit_task_path(@task), class: "btn btn-default btn-sm" %> |
+	<%= link_to 'Back', tasks_path, class: "btn btn-default btn-sm" %>
+  </div>
+</div>

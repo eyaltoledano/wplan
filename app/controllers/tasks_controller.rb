@@ -10,6 +10,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @topay = @task.cost.to_i - @task.paidtodate.to_i
   end
 
   # GET /tasks/new

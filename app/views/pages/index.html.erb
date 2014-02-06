@@ -1,8 +1,9 @@
 <div class="jumbotron center">
-	<h1>Wplan<br>
-	<small>A simple wedding planning app.</small></h1>
+	<h1>Wplan<br><small>A simple wedding planning app.</small></h1>
 
 	<p>Made with love for Gizoubizou</p>
 
-	<p>Go to <%= link_to 'tasks', tasks_path %></p>
+	<hr>
+
+	<p><%= link_to 'Go to Tasks', tasks_path, class: "btn btn-default btn-lg" %>  <%= link_to 'Go to Dashboard', dashboard_path, class: "btn btn-default btn-lg" %></p>
 </div>
