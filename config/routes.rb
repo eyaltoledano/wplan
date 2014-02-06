@@ -1,6 +1,11 @@
 Wplan::Application.routes.draw do
-  root 'pages#index'
-  get "pages/about"
+  root            'pages#index'
+  get "about" =>  'pages#about'
+
+  
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
